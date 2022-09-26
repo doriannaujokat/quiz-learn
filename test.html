@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <script src="./quiz.js" type="module"></script>
+    <script src="./questions/number-pyramid.js" type="module"></script>
+    <script type="module">
+        import { QuizDom, QuestionDom } from "./quiz.js";
+        import { NumberPyramid } from "./questions/number-pyramid.js";
+        const quiz = new QuizDom({timeLimit: 20});
+        document.getElementById("content").prepend(quiz);
+        quiz.addQuestion(NumberPyramid, {size: 3, maxAttempts: 1, points: 3});
+        quiz.addQuestion(NumberPyramid, {size: 6, maxAttempts: 3, points: 5});
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="app">
+  <div id="content">
+      <quiz-number-pyramid qindex="1" pyramid-operation="+" pyramid-size="2"></quiz-number-pyramid>
+      <quiz-number-pyramid qindex="2" pyramid-operation="+" pyramid-size="3"></quiz-number-pyramid>
+      <quiz-number-pyramid qindex="3" pyramid-operation="+" pyramid-size="4"></quiz-number-pyramid>
+      <quiz-number-pyramid qindex="4" pyramid-operation="+" pyramid-size="5"></quiz-number-pyramid>
+      <quiz-number-pyramid qindex="5" pyramid-operation="+" pyramid-size="6"></quiz-number-pyramid>
+  </div>
+</div>
+</body>
+</html>

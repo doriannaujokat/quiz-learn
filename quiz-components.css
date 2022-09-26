@@ -1,0 +1,132 @@
+.question {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin-bottom: 1em;
+    user-select: none;
+}
+.header-row {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    align-items: center;
+}
+#points, #maxAttempts-count {
+    margin-inline-start: 1em;
+    white-space: nowrap;
+}
+#index {
+    margin-inline-end: 1ch;
+}
+#prompt {
+    font-weight: bold;
+    font-size: 1.25em;
+    flex: 1;
+}
+#maxAttempts {
+    color: red;
+}
+#maxAttempts-label {
+    font-weight: bold;
+}
+#locked {
+    cursor: not-allowed;
+}
+.question-footer {
+    flex-shrink: 0;
+    margin-top: 1em;
+}
+.question-body {
+    flex: 1;
+}
+.question-controls {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
+.question-controls > * {
+    min-width: 1em;
+    box-sizing: content-box;
+    height: 1em;
+    margin-left: 0.5em;
+}
+.question-controls > *:first-child {
+    margin: 0;
+}
+#locked svg {
+    margin: 0;
+}
+
+button {
+    padding: 0.5em;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+}
+svg:not(:first-child) {
+    margin-inline-start: 0.5ch;
+}
+svg:not(:last-child) {
+    margin-inline-end: 0.5ch;
+}
+
+.pyramid {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    overflow-x: auto;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.pyramid-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.pyramid-cell {
+    height: 2em;
+    border: 2px solid currentColor;
+    user-select: all;
+    outline: none;
+    width: 7ch;
+    text-align: center;
+    appearance: textfield;
+}
+.pyramid-row:not(:first-child) .pyramid-cell {
+    border-bottom: 0px;
+}
+.pyramid-cell:not(:first-child) {
+    border-left: 0px;
+}
+.pyramid-cell::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.correct {
+    background-color: lime;
+}
+.incorrect {
+    background-color: red;
+}
+.partially-correct {
+    background-color: orange;
+}

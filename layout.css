@@ -1,0 +1,26 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+body {
+    font-family: sans-serif;
+}
+
+#app {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header header"
+        "sidebar content content"
+        "sidebar footer footer";
+}
+#content {
+    grid-area: content;
+}
+
